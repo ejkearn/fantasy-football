@@ -13,17 +13,32 @@
 
 <body>
     <section class="container-fluid">
+
     <form class="form-inline" onsubmit="app.controllers.playersController.searchName(event)">
+    
         <div class="form-group d-inline-flex">
             <input type="text" class="form-control" name="player" placeholder="Player Name" />
             <button type="submit" class="btn btn-primary" id="searchPlayer">search: player</button>
         </div>
     </form>
-    <div class="row">
-        
-    </div>
+        <div class="row" id="players">
+            <!-- <div class="col-2">
+                <div class="card" class="">
+                    <img class="card-img-top" src="//placehold.it/200x200.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">player Name</h5>
+                        <p class="card-text">Postion:</p>
+                        <p class="card-text">team:</p>
+                        <a href="#" class="btn btn-primary">ADD</a>
+                    </div>
+                </div>
+            </div> -->
+            
 
-</section>
+            </div>
+        </div>
+
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- //Service -->
