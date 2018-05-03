@@ -29,14 +29,32 @@ function PlayersService(callback) {
       callback()
     });
   }
-  function searchCheck(term)
+
   //Public
 
-this.getSearch = function getSearch(term){
-  var results = []
-  playersData.filter(term)
-  
-}
+//search by functions
+  this.getPlayersByTeam = function(teamName){
+    return playersData.filter(function(player){
+      if(player.pro_team.toLowerCase() == teamName.toLowerCase()){
+        return true;
+      }
+    });
+  }
+  this.getPlayersByName = function(name){
+    return playersData.filter(function(player){
+      name = name.toLowerCase();
+      if(player.fullname.toLowerCase().includes(name)){
+        return true;
+      }
+    });
+  }
+  this.getPlayersByPosition = function(position){
+    return playersData.filter(function(player){
+      if(player.position.toLowerCase() == position.toLowerCase()){
+        return true;
+      }
+    });
+  }
 
   this.getPlayersData = function () {
     console.log(playersData)

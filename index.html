@@ -12,12 +12,18 @@
 </head>
 
 <body>
-        <form class="form-inline" onsubmit="app.controllers.playersController.search(event)">
+    <section class="container-fluid">
+    <form class="form-inline" onsubmit="app.controllers.playersController.searchName(event)">
         <div class="form-group d-inline-flex">
-                <input type="text" class="form-control" name="player" placeholder="Player Name" />
-                <button type="submit" class="btn btn-primary" id="searchPlayer">search: player</button>
-            </div>
-            </form>
+            <input type="text" class="form-control" name="player" placeholder="Player Name" />
+            <button type="submit" class="btn btn-primary" id="searchPlayer">search: player</button>
+        </div>
+    </form>
+    <div class="row">
+        
+    </div>
+
+</section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- //Service -->
