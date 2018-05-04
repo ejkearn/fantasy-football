@@ -11,7 +11,9 @@ function PlayersService(callback) {
     //if they do, pull from there
     if (localData) {
       playersData = JSON.parse(localData);
-
+      for (let i=0; i<playersData.length; i++){
+        console.log(playersData[i].position)
+      }
       //return will short-circuit the loadPlayersData function
       //this will prevent the code below from ever executing
       return callback()
@@ -74,6 +76,7 @@ function PlayersService(callback) {
     });
   }
   this.getPlayersByName = function (name) {
+    
     return playersData.filter(function (player) {
       name = name.toLowerCase();
       if (player.fullname.toLowerCase().includes(name)) {
@@ -90,7 +93,9 @@ function PlayersService(callback) {
   }
 
   this.getPlayersData = function () {
-    console.log(playersData)
+ 
+    
+
     return playersData;
   }
 

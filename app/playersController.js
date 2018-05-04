@@ -74,7 +74,7 @@ this.removePlayer = function removePlayer(playerId){
     // search team
     this.searchTeam = function searchTeam(e) {
         e.preventDefault();
-        var team = e.target.team.value;
+        var team = e.target.id;
         var results = [];
         results = playersService.getPlayersByTeam(team);
         drawPlayers(results, 'players');
@@ -82,7 +82,7 @@ this.removePlayer = function removePlayer(playerId){
     // search position
     this.searchPosition = function searchPostition(e) {
         e.preventDefault();
-        var position = e.target.position.value;
+        var position = e.target.id;
         var results = [];
         results = playersService.getPlayersByPosition(position);
         drawPlayers(results, 'players');
@@ -91,9 +91,10 @@ this.removePlayer = function removePlayer(playerId){
     this.tester = function tester(e) {
         e.preventDefault();
         var test
+        
         console.log('working')
-        test = playersService.getPlayersData();
-        console.log(test);
+        test = e
+        console.log(e.target.id);
 
     }
 

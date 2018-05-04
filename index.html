@@ -15,7 +15,7 @@
     <section class="container-fluid">
         <div class="row">
             <!-- Player Search -->
-            <div class="col">
+            <div class="col-4">
                 <form class="form-inline" onsubmit="app.controllers.playersController.searchName(event)">
                     <div class="form-group d-inline-flex">
                         <input type="text" class="form-control" name="player" placeholder="Player Name" />
@@ -24,22 +24,72 @@
                 </form>
             </div>
             <!-- Team Search -->
-            <div class="col">
-                <form class="form-inline" onsubmit="app.controllers.playersController.searchTeam(event)">
-                    <div class="form-group d-inline-flex">
-                        <input type="text" class="form-control" name="team" placeholder="Team Name" />
-                        <button type="submit" class="btn btn-primary" id="searchTeam">Search: Team</button>
-                    </div>
-                </form>
+            <div class="col-4">
+                <!-- <form class="form-inline" onsubmit="app.controllers.playersController.searchTeam(event)"> -->
+                        <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Teams
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="Teams">
+                                  <a class="dropdown-item" id="az" onclick="app.controllers.playersController.searchTeam(event)">Arizona Cardinals</a>
+                                  <a class="dropdown-item" id="alt" onclick="app.controllers.playersController.searchTeam(event)">Atlanta Falcons</a>
+                                  <a class="dropdown-item" id="bal" onclick="app.controllers.playersController.searchTeam(event)">Baltimare Ravens</a>
+                                  <a class="dropdown-item" id="buf" onclick="app.controllers.playersController.searchTeam(event)">Buffalo Bills</a>
+                                  <a class="dropdown-item" id="car" onclick="app.controllers.playersController.searchTeam(event)">Carolina Panthers</a>
+                                  <a class="dropdown-item" id="chi" onclick="app.controllers.playersController.searchTeam(event)">Chicago Bears</a>
+                                  <a class="dropdown-item" id="cin" onclick="app.controllers.playersController.searchTeam(event)">Cincinnati Bengal</a>
+                                  <a class="dropdown-item" id="cle" onclick="app.controllers.playersController.searchTeam(event)">Cleaveland Browns</a>
+                                  <a class="dropdown-item" id="dal" onclick="app.controllers.playersController.searchTeam(event)">Dallas Cowboys</a>
+                                  <a class="dropdown-item" id="den" onclick="app.controllers.playersController.searchTeam(event)">Denver Broncos</a>
+                                  <a class="dropdown-item" id="det" onclick="app.controllers.playersController.searchTeam(event)">Detroit Lions</a>
+                                  <a class="dropdown-item" id="gb" onclick="app.controllers.playersController.searchTeam(event)">Green Bay Packers</a>
+                                  <a class="dropdown-item" id="hou" onclick="app.controllers.playersController.searchTeam(event)">Houseon Texans</a>
+                                  <a class="dropdown-item" id="ind" onclick="app.controllers.playersController.searchTeam(event)">Indianapolis Colts</a>
+                                  <a class="dropdown-item" id="jac" onclick="app.controllers.playersController.searchTeam(event)">Jacksonville Jaguars</a>
+                                  <a class="dropdown-item" id="kc" onclick="app.controllers.playersController.searchTeam(event)">Kansas City Chiefs</a>
+                                  <a class="dropdown-item" id="lac" onclick="app.controllers.playersController.searchTeam(event)">Los Angels Charges</a>
+                                  <a class="dropdown-item" id="lar" onclick="app.controllers.playersController.searchTeam(event)">Loas Angeles Rams</a>
+                                  <a class="dropdown-item" id="Mia" onclick="app.controllers.playersController.searchTeam(event)">Miami Dolphins</a>
+                                  <a class="dropdown-item" id="min" onclick="app.controllers.playersController.searchTeam(event)">Minnesota Vikings</a>
+                                  <a class="dropdown-item" id="ne" onclick="app.controllers.playersController.searchTeam(event)">New England Partiots</a>
+                                  <a class="dropdown-item" id="no" onclick="app.controllers.playersController.searchTeam(event)">New Orleans Saints</a>
+                                  <a class="dropdown-item" id="nyg" onclick="app.controllers.playersController.searchTeam(event)">New York Giants</a>
+                                  <a class="dropdown-item" id="nyj" onclick="app.controllers.playersController.searchTeam(event)">New york Jets</a>
+                                  <a class="dropdown-item" id="oak" onclick="app.controllers.playersController.searchTeam(event)">Oakland Raiders</a>
+                                  <a class="dropdown-item" id="phi" onclick="app.controllers.playersController.searchTeam(event)">Philadelphia Eagles</a>
+                                  <a class="dropdown-item" id="pit" onclick="app.controllers.playersController.searchTeam(event)">Pittsburgh Steelers</a>
+                                  <a class="dropdown-item" id="sf" onclick="app.controllers.playersController.searchTeam(event)">San Francisco 49ers</a>
+                                  <a class="dropdown-item" id="sea" onclick="app.controllers.playersController.searchTeam(event)">Seattle Seahawks</a>
+                                  <a class="dropdown-item" id="tb" onclick="app.controllers.playersController.searchTeam(event)">Tampa Bay Buccaneers</a>
+                                  <a class="dropdown-item" id="ten" onclick="app.controllers.playersController.searchTeam(event)">Tennessee Titans</a>
+                                  <a class="dropdown-item" id="was" onclick="app.controllers.playersController.searchTeam(event)">Washington Redskins</a>
+                                </div>
+                              </div>
+                <!-- </form> -->
             </div>
             <!-- Position Search -->
-            <div class="col">
-                <form class="form-inline" onsubmit="app.controllers.playersController.searchPosition(event)">
+            <div class="col-4">
+                    <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Position
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="Teams">
+                                    <a class="dropdown-item" id="qb" onclick="app.controllers.playersController.searchPosition(event)">Quarter Backs</a>
+                                    <a class="dropdown-item" id="wr" onclick="app.controllers.playersController.searchPosition(event)">Wide Receiver</a>
+                                    <a class="dropdown-item" id="rb" onclick="app.controllers.playersController.searchPosition(event)">Running Back</a>
+                                    <a class="dropdown-item" id="lb" onclick="app.controllers.playersController.searchPosition(event)">Line Backs</a>
+                                    <a class="dropdown-item" id="db" onclick="app.controllers.playersController.searchPosition(event)">Defensive Backs</a>
+                                    <a class="dropdown-item" id="k" onclick="app.controllers.playersController.searchPosition(event)">Kicker</a>
+                                    <a class="dropdown-item" id="te" onclick="app.controllers.playersController.searchPosition(event)">Tight End</a>
+                                    <a class="dropdown-item" id="dl" onclick="app.controllers.playersController.searchPosition(event)">Defenseive Line</a>
+                                </div>
+                              </div>
+                <!-- <form class="form-inline" onsubmit="app.controllers.playersController.searchPosition(event)">
                     <div class="form-group d-inline-flex">
                         <input type="text" class="form-control" name="position" placeholder="Position" />
                         <button type="submit" class="btn btn-primary" id="searchPosition">Search: Position</button>
                     </div>
-                </form>
+                </form> -->
             </div>
         </div>
         <div class="row">
@@ -82,7 +132,10 @@
         </div>
 
     </section>
-
+<!-- external scripts-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- //Service -->
     <script src="app/playersService.js"></script>
