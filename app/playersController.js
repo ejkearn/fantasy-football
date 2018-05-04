@@ -12,7 +12,7 @@ function PlayersController() {
         var template = '';
         for (var i = 0; i < players.length; i++) {
             var player = players[i];
-            debugger
+            
             // console.log(player.fullname)
             if (place == 'players') {
                 template += `<div class="col-3">`
