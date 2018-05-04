@@ -1,7 +1,8 @@
 function PlayersService(callback) {
 
   //private
-  var playersData = []
+  var playersData = [];
+  var myTeam = [];
   //...
   //...
   function loadPlayersData() {
@@ -31,26 +32,50 @@ function PlayersService(callback) {
   }
 
   //Public
+  // add to team
+  this.addPlayer = function addPlayer(playerId) {
+    for (let i = 0; i < playersData.length; i++) {
+      if (playerId == playersData[i].id) {
+        myTeam.push(playersData[i])
+      }
+    }[]
+    console.log(myTeam);
+    return myTeam;
+  };
 
-//search by functions
-  this.getPlayersByTeam = function(teamName){
-    return playersData.filter(function(player){
-      if(player.pro_team.toLowerCase() == teamName.toLowerCase()){
+  // remove from team
+  this.removePlayer = function removePlayer(playerId) {
+    var removePlayer = myTeam.find(function (player) {
+      return player.id == playerId
+    });
+
+    //indexOf itterates over an array to find the element it was passed and returns the index, if it doesnt find it it will return -1
+    var index = myTeam.indexOf(removePlayer);
+    //splice removes object from array
+    myTeam.splice(index, 1);
+    console.log(myTeam);
+    return myTeam
+  };
+
+  //search by functions
+  this.getPlayersByTeam = function (teamName) {
+    return playersData.filter(function (player) {
+      if (player.pro_team.toLowerCase() == teamName.toLowerCase()) {
         return true;
       }
     });
   }
-  this.getPlayersByName = function(name){
-    return playersData.filter(function(player){
+  this.getPlayersByName = function (name) {
+    return playersData.filter(function (player) {
       name = name.toLowerCase();
-      if(player.fullname.toLowerCase().includes(name)){
+      if (player.fullname.toLowerCase().includes(name)) {
         return true;
       }
     });
   }
-  this.getPlayersByPosition = function(position){
-    return playersData.filter(function(player){
-      if(player.position.toLowerCase() == position.toLowerCase()){
+  this.getPlayersByPosition = function (position) {
+    return playersData.filter(function (player) {
+      if (player.position.toLowerCase() == position.toLowerCase()) {
         return true;
       }
     });
