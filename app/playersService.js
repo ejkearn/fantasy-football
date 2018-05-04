@@ -12,7 +12,7 @@ function PlayersService(callback) {
     if (localData) {
       playersData = JSON.parse(localData);
       for (let i=0; i<playersData.length; i++){
-        console.log(playersData[i].position)
+        console.log(playersData[i].pro_team)
       }
       //return will short-circuit the loadPlayersData function
       //this will prevent the code below from ever executing
