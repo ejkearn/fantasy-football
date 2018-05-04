@@ -34,11 +34,22 @@ function PlayersService(callback) {
   //Public
   // add to team
   this.addPlayer = function addPlayer(playerId) {
+    var samePosition = false
+
+
     for (let i = 0; i < playersData.length; i++) {
       if (playerId == playersData[i].id) {
+        for (let a = 0; a < myTeam.length; a++) {
+          samePosition = (playersData[i].position == myTeam[a].position)
+        }
+
+        if (!samePosition){
         myTeam.push(playersData[i])
+        }else{
+          alert(`You already have a Player in that Position!`)
+        }
       }
-    }[]
+    };
     console.log(myTeam);
     return myTeam;
   };
@@ -48,10 +59,7 @@ function PlayersService(callback) {
     var removePlayer = myTeam.find(function (player) {
       return player.id == playerId
     });
-
-    //indexOf itterates over an array to find the element it was passed and returns the index, if it doesnt find it it will return -1
     var index = myTeam.indexOf(removePlayer);
-    //splice removes object from array
     myTeam.splice(index, 1);
     console.log(myTeam);
     return myTeam
