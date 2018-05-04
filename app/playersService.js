@@ -11,9 +11,7 @@ function PlayersService(callback) {
     //if they do, pull from there
     if (localData) {
       playersData = JSON.parse(localData);
-      for (let i=0; i<playersData.length; i++){
-        console.log(playersData[i].pro_team)
-      }
+
       //return will short-circuit the loadPlayersData function
       //this will prevent the code below from ever executing
       return callback()
@@ -38,21 +36,21 @@ function PlayersService(callback) {
   this.addPlayer = function addPlayer(playerId) {
     var samePosition = false
 
-
+    //position check,
     for (let i = 0; i < playersData.length; i++) {
       if (playerId == playersData[i].id) {
         for (let a = 0; a < myTeam.length; a++) {
-          samePosition = (playersData[i].position == myTeam[a].position)
+          if (playersData[i].position == myTeam[a].position){
+          samePosition = true}
         }
 
-        if (!samePosition){
-        myTeam.push(playersData[i])
-        }else{
+        if (!samePosition) {
+          myTeam.push(playersData[i])
+        } else {
           alert(`You already have a Player in that Position!`)
         }
       }
     };
-    console.log(myTeam);
     return myTeam;
   };
 
@@ -63,7 +61,6 @@ function PlayersService(callback) {
     });
     var index = myTeam.indexOf(removePlayer);
     myTeam.splice(index, 1);
-    console.log(myTeam);
     return myTeam
   };
 
@@ -76,7 +73,7 @@ function PlayersService(callback) {
     });
   }
   this.getPlayersByName = function (name) {
-    
+
     return playersData.filter(function (player) {
       name = name.toLowerCase();
       if (player.fullname.toLowerCase().includes(name)) {
@@ -93,8 +90,8 @@ function PlayersService(callback) {
   }
 
   this.getPlayersData = function () {
- 
-    
+
+
 
     return playersData;
   }
